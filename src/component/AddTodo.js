@@ -16,7 +16,8 @@ class AddTodo extends React.Component {
                         className="input-bar" 
                         onChange={(e) => this.updateInput(e)} 
                         type="text" 
-                        placeholder="Adicione um item" 
+                        placeholder="Adicione um item"
+                        id="addTodoInput"
                     />
                     <button className="add-button" type="submit">Adicionar</button>
                 </form>
@@ -31,6 +32,7 @@ class AddTodo extends React.Component {
     submitTodo = (e) => {
         e.preventDefault();
         this.props.addTodoFunction(this.state.todo);
+        document.getElementById('addTodoInput').value = '';
     }
 }
 

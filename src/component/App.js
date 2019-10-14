@@ -13,10 +13,14 @@ class App extends React.Component {
     }
 
     render() {
-        return ( 
-            <AddTodo addTodoFunction={this.addTodo} />
+        return( 
+            <div>
+                <AddTodo addTodoFunction={this.addTodo}></AddTodo>
+                <TodoList todos={this.state.todos}></TodoList>
+            </div>
         );
     }
+    
     componentDidMount = () => {
         const todos = localStorage.getItem('todos');
         if(todos) {
